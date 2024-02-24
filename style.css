@@ -1,0 +1,49 @@
+body {
+  background-color: #54b8ff;
+  text-align: center;
+  margin-top: 25%;
+}
+
+input {
+  border: 2px solid #000000;
+  border-radius: 6px;
+}
+
+button {
+  width: auto;
+  height: 30px;
+  background-color: #58c74c;
+  border: none;
+  border-radius: 4px;
+  color: #000000;
+  transition: color 0.8s ease-in-out, transform 0.8s ease-in-out,
+    background-color 0.8.s ease-in-out;
+}
+
+button:hover {
+  background-color: #47b63b;
+  transform: scale(1.02);
+}
+
+h2 {
+  width: 80%;
+  border: none;
+  border-radius: 4px;
+  background-color: #8aedd6;
+  margin: auto;
+  padding: 3px;
+}
+
+main {
+  transform: scale(1.6);
+  border: none;
+  border-radius: 25px;
+  margin: auto;
+  width: 700px;
+  padding: 10px;
+  background-color: #00cbd6;
+}
+
+#pass {
+  margin-top: 7px;
+}
