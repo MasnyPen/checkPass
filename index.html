@@ -7,25 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Sprawdź hasło</title>
+    <script type="module" async src="dist/app.js"></script>
 </head>
 
 <body>
     <main>
-        <h1>Wpisz swoje hasło, aby sprawdzić, czy jest dobre!</h1>
+        <h1>Sprawdź swoje hasło!</h1>
         <div class="form-container">
-            <input type="text" class="password-input" placeholder="Wpisz hasło">
-            <button class="check-button">Sprawdź</button>
+            <input type="text" class="inpucik">
+            <button class="btn">Kliknij aby sprawdzić</button>
         </div>
-        <div class="result-container">
-            <div id="password-strength"></div>
-            <div id="password-errors"></div>
-        </div>
+        <p>
+        <div id="divek"></div>
+        </p>
+        <br>
         <section>
-            <button id="generate-button">Wygeneruj hasło</button>
-            <div id="generated-password"></div>
+            <button id="btnpass">Wygeneruj hasło</button>
+            <div id="pass"></div>
         </section>
     </main>
-    <script type="module" async src="dist/app.js"></script>
 </body>
 
 </html>

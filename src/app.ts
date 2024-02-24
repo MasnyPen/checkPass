@@ -49,7 +49,7 @@ btn.addEventListener("click", e => {
     const markup = `<h2>✅Twoje hasło spełnia wymagania!✅</h2>`
 
     paragraf.innerHTML = markup
-    inpucik.value = ""
+    // inpucik.value = ""
   } else {
     console.error("")
   }
