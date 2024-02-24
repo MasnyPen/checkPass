@@ -89,3 +89,18 @@ section {
 #btnpass:hover {
   background-color: #218838;
 }
+
+img {
+  weight: 100px;
+  height: 100px;
+  margin: 0;
+  animation: rotate 4s linear infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
