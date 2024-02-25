@@ -104,3 +104,19 @@ img {
     transform: rotate(360deg);
   }
 }
+
+#btncopy {
+  display: none;
+  margin: auto;
+  background-color: #3f4040;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#btncopy:hover {
+  background-color: #233030;
+}

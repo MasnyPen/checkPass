@@ -5,6 +5,7 @@ const paragraf = document.querySelector("p");
 const div = document.getElementById("divek");
 const pass = document.getElementById("pass");
 const btnpass = document.getElementById("btnpass");
+const btncopy = document.getElementById("btncopy");
 function renderSpinner(el) {
     const markup = `
     <div class="spinner">
@@ -91,6 +92,18 @@ btnpass.addEventListener("click", e => {
             }
         }
         pass.innerHTML = `<h2>${password}</h2>`;
+        btncopy.style.display = "block";
     }, 500);
+});
+btncopy.addEventListener("click", (e) => {
+    e.preventDefault();
+    const passText = pass.querySelector("h2");
+    const passwordText = passText.innerText;
+    const tempInput = document.createElement("input");
+    tempInput.value = passwordText;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
 });
 //# sourceMappingURL=app.js.map

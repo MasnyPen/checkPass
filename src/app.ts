@@ -4,6 +4,7 @@ const paragraf = document.querySelector("p") as HTMLElement
 const div = document.getElementById("divek") as HTMLElement
 const pass = document.getElementById("pass") as HTMLElement
 const btnpass = document.getElementById("btnpass") as HTMLElement
+const btncopy = document.getElementById("btncopy") as HTMLElement
 
 function renderSpinner(el: HTMLElement) {
   const markup = `
@@ -61,7 +62,6 @@ btn.addEventListener("click", e => {
       const markup = `<h2>✅Twoje hasło spełnia wymagania!✅</h2>`
 
       paragraf.innerHTML = markup
-      // inpucik.value = ""
     } else {
       console.error("")
     }
@@ -109,5 +109,19 @@ btnpass.addEventListener("click", e => {
     }
 
     pass.innerHTML = `<h2>${password}</h2>`
+    btncopy.style.display = "block"
   }, 500)
+})
+
+btncopy.addEventListener("click", (e: Event) => {
+  e.preventDefault()
+  const passText = pass.querySelector("h2") as HTMLElement
+  const passwordText = passText.innerText
+  const tempInput = document.createElement("input")
+  tempInput.value = passwordText
+  document.body.appendChild(tempInput)
+
+  tempInput.select()
+  document.execCommand("copy")
+  document.body.removeChild(tempInput)
 })
