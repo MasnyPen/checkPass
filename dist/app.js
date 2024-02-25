@@ -105,5 +105,9 @@ btncopy.addEventListener("click", (e) => {
     tempInput.select();
     document.execCommand("copy");
     document.body.removeChild(tempInput);
+    btncopy.textContent = "Skopiowano!";
+    setTimeout(() => {
+        btncopy.textContent = "kopiuj";
+    }, 1000);
 });
 //# sourceMappingURL=app.js.map

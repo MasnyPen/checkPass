@@ -124,4 +124,10 @@ btncopy.addEventListener("click", (e: Event) => {
   tempInput.select()
   document.execCommand("copy")
   document.body.removeChild(tempInput)
+
+  btncopy.textContent = "Skopiowano!"
+
+  setTimeout(() => {
+    btncopy.textContent = "kopiuj"
+  }, 1000)
 })
