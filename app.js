@@ -1,12 +1,13 @@
-const btn = document.querySelector("button") as HTMLElement
-const inpucik = document.querySelector("input") as HTMLInputElement
-const paragraf = document.querySelector("p") as HTMLElement
-const div = document.getElementById("divek") as HTMLElement
-const pass = document.getElementById("pass") as HTMLElement
-const btnpass = document.getElementById("btnpass") as HTMLElement
-const btncopy = document.getElementById("btncopy") as HTMLElement
+const btn = document.querySelector("button")
+const inpucik = document.querySelector("input")
+const paragraf = document.querySelector("p")
+const div = document.getElementById("divek")
+const pass = document.getElementById("pass") 
+const btnpass = document.getElementById("btnpass")
+const numInput = document.getElementById("pass-num")
+const btncopy = document.getElementById("btncopy")
 
-function renderSpinner(el: HTMLElement) {
+function renderSpinner(el) {
   const markup = `
     <div class="spinner">
         <img src="spinner.png">
@@ -27,8 +28,8 @@ btn.addEventListener("click", e => {
     if (!str) {
       return (paragraf.innerHTML = "<h2>Nie podano hasła!</h2>")
     }
-    let i: number = 0
-    let errs: string[] = []
+    let i = 0
+    let errs = []
     if (!(str.length >= 8)) {
       errs.push("Hasło musi zawierać co najmniej 8 liter.")
       i++
@@ -67,7 +68,7 @@ btn.addEventListener("click", e => {
     }
 
     errs.forEach(err => {
-      const markup = `<div id="es">❌ ${err} ❌</div>`
+      const markup = `<div id="es"> ${err} </div>`
       div.innerHTML += markup
     })
 
@@ -82,17 +83,19 @@ btnpass.addEventListener("click", e => {
   pass.innerHTML = ""
   renderSpinner(pass)
   setTimeout(() => {
-    let chars: string =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*"
-    let password: string = ""
+    const length = numInput.value < 8 ? 8 : numInput.value
 
-    const isSpecialChar = (char: string): boolean =>
+    let chars =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*"
+    let password = ""
+
+    const isSpecialChar = (char) =>
       /[!@#\$%\^&\*\(\)_\+\-=\[\]\{\};:'",<\.>\/\?\\|`~]/.test(char)
 
     let meetsRequirements = false
     while (!meetsRequirements) {
       password = ""
-      for (let i = 0; i < 8; i++) {
+      for (let i = 0; i < length; i++) {
         const randomIndex = Math.floor(Math.random() * chars.length)
         password += chars[randomIndex]
       }
@@ -113,9 +116,9 @@ btnpass.addEventListener("click", e => {
   }, 500)
 })
 
-btncopy.addEventListener("click", (e: Event) => {
+btncopy.addEventListener("click", (e) => {
   e.preventDefault()
-  const passText = pass.querySelector("h2") as HTMLElement
+  const passText = pass.querySelector("h2")
   const passwordText = passText.innerText
   const tempInput = document.createElement("input")
   tempInput.value = passwordText
